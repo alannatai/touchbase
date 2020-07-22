@@ -7,3 +7,8 @@ export const selectBase = (base) => {
     payload: base,
   };
 };
+
+export const createBase = (formValues) => async (dispatch) => {
+  const instance = await touchbase.getTouchbaseInstance();
+  instance.post('/api/v1/base', formValues);
+};

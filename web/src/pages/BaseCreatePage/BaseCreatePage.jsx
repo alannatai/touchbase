@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { createStream } from '../../actions/basesActions';
+import { createBase } from '../../actions/basesActions';
 
 class BaseCreatePage extends Component {
   renderError({ error, touched }) {
@@ -20,9 +20,10 @@ class BaseCreatePage extends Component {
     );
   };
 
-  onSubmit(formValues) {
+  onSubmit = (formValues) => {
     console.log(formValues);
-  }
+    this.props.createBase(formValues);
+  };
 
   render() {
     return (
@@ -53,7 +54,9 @@ function validate(formValues) {
   return errors;
 }
 
-export default reduxForm({
+const formWrapped = reduxForm({
   form: 'baseCreate',
   validate,
 })(BaseCreatePage);
+
+export default connect(null, { createBase })(formWrapped);

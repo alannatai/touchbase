@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Message from '../Message/Message';
 
-function MessagesList({ messages }) {
+function MessagesList({ messages, base, pathname }) {
   return (
     <div>
       <ul>
-        {messages.map((message) => (
-          <Message key={message.id} {...message} />
-        ))}
+        {messages.map((message) =>
+          pathname.includes(`/user/bases/${message.base.uuid}`) ? (
+            <Message key={message.id} {...message} />
+          ) : null
+        )}
       </ul>
     </div>
   );

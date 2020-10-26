@@ -3,10 +3,11 @@ import { ADD_MESSAGE, MESSAGE_RECEIVED, ADD_USER, USERS_LIST } from './types';
 let nextMessageId = 0;
 let nextUserId = 0;
 
-export const addMessage = (message, author) => {
+export const addMessage = (base, message, author) => {
   return {
     type: ADD_MESSAGE,
     id: nextMessageId++,
+    base,
     message,
     author,
   };

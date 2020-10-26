@@ -3,8 +3,8 @@ import NewMessageBarComponent from './NewMessageBar';
 import { addMessage } from '../../actions/chatActions';
 
 const mapDispatchToProps = (dispatch) => ({
-  dispatch: (message, author) => {
-    dispatch(addMessage(message, author));
+  dispatch: (base, message, author) => {
+    dispatch(addMessage(base, message, author));
   },
 });
 

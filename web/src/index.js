@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import './index.css';
 import App from './App';
@@ -14,7 +15,10 @@ import * as serviceWorker from './serviceWorker';
 
 Amplify.configure(awsconfig);
 
-const store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 ReactDOM.render(
   <React.StrictMode>

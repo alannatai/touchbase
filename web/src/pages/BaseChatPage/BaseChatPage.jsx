@@ -6,7 +6,7 @@ import ChatSideBar from '../../components/ChatSideBar/ChatSideBar';
 import { MessagesList } from '../../components/MessagesList/MessagesListContainer';
 import { NewMessageBar } from '../../components/NewMessageBar/NewMessageBarContainer';
 
-function BaseChatPage({ base }) {
+function BaseChatPage({ base, pathname }) {
   return (
     <div className='page'>
       <div className='chat-container'>
@@ -14,8 +14,8 @@ function BaseChatPage({ base }) {
           <ChatSideBar />
         </div>
         <div className='chat-main'>
-          <MessagesList />
-          <NewMessageBar />
+          <MessagesList base={base} pathname={pathname} />
+          <NewMessageBar base={base} />
         </div>
       </div>
     </div>

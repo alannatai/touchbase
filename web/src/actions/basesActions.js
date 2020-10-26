@@ -12,3 +12,7 @@ export const createBase = (formValues) => async (dispatch) => {
   const instance = await touchbase.getTouchbaseInstance();
   instance.post('/api/v1/base', formValues);
 };
+
+export const deleteBase = () => async (dispatch) => {
+  const instance = await touchbase.getTouchbaseInstance();
+};

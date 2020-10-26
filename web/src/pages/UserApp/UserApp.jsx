@@ -52,7 +52,7 @@ class UserApp extends Component {
               exact
               path={`/user/bases/${base.uuid}/chat`}
               key={base.uuid}
-              render={() => <BaseChatPage base={base} />}
+              render={() => <BaseChatPage base={base} pathname={pathname} />}
             />
           </>
         ))}

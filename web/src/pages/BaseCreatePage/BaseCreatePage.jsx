@@ -36,6 +36,11 @@ class BaseCreatePage extends Component {
               component={this.renderInput}
               label='Enter Base name'
             />
+            <Field
+              name='imageUrl'
+              component={this.renderInput}
+              label='Enter Image URL'
+            />
             <button>Submit</button>
           </form>
         </div>

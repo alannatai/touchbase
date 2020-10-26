@@ -11,7 +11,7 @@ function NewMessageBar(props) {
       <input
         onKeyPress={(e) => {
           if (e.key === 'Enter') {
-            props.dispatch(input.value, 'Me');
+            props.dispatch(props.base, input.value, 'Me');
             input.value = '';
           }
         }}

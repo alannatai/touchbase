@@ -11,7 +11,12 @@ export default (state = [], action) => {
     case MESSAGE_RECEIVED:
       return [
         ...state,
-        { message: action.message, author: action.author, id: action.id },
+        {
+          base: action.base,
+          message: action.message,
+          author: action.author,
+          id: action.id,
+        },
       ];
     case ADD_USER:
       return [...state, { name: action.name, id: action.id }];

@@ -1,6 +1,6 @@
 package com.kf.touchbase.mappers;
 
-import com.kf.touchbase.models.domain.Base;
+import com.kf.touchbase.models.domain.postgres.Base;
 import com.kf.touchbase.models.dto.BaseReq;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,8 +19,8 @@ class BaseMapperImplTest {
     @Test
     void testBaseReqToBase() {
         // Setup
-        final BaseReq base = new BaseReq("name", 0.0, "imageUrl");
-        final Base expectedResult = Base.builder().name("name").score(0.0).imageUrl("imageUrl").build();
+        final BaseReq base = new BaseReq("name", "imageUrl");
+        final Base expectedResult = Base.builder().isActive(true).name("name").score(0.0).imageUrl("imageUrl").build();
 
         // Run the test
         final Base result = baseMapperImplUnderTest.baseReqToBase(base);

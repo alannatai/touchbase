@@ -1,6 +1,6 @@
 package com.kf.touchbase.mappers;
 
-import com.kf.touchbase.models.domain.Base;
+import com.kf.touchbase.models.domain.postgres.Base;
 import com.kf.touchbase.models.dto.BaseReq;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
